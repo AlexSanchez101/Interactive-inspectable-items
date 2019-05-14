@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interactive.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0980392, 0.0431373, 0.494118, 1 )
+
+[sub_resource type="PrismMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 0, 1, 1, 0, 1, -1, 0, 1, 1, 0, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 0, 1, 1, 0, 1, -1, 0, 1, -1, 0, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1 )
+
+[node name="Prism" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.132436, 0, 0.0763431, 0, 0.212759, 0, -0.132436, 0, 0.0763431, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Interactive" type="Area" parent="MeshInstance"]
+script = ExtResource( 1 )
+inspect = true
+inspect_name = "Prism"
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Interactive"]
+shape = SubResource( 3 )
