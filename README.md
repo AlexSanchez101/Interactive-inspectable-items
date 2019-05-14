@@ -1,4 +1,4 @@
-# Interactive_(inspectable)_items
+# Interactive (inspectable) items
 
 Simple example how to create inspectable items for a game
 
